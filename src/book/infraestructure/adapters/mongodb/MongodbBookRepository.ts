@@ -16,7 +16,9 @@ export class MongodbBookRepository implements BookRepository{
 
     async getBookById(id:string):Promise<Book|null>{
         try{
+            console.log('id de busqueda', id)
             const book = await BookMongodbModel.findById(id);
+            console.log('book tomado por mongo', book)
             return book;
         }catch(error){
             console.log(error);
