@@ -10,4 +10,6 @@ export interface BookRepository {
     updateBook(book:Book):Promise<boolean|null>;
 
     deleteBook(id:string):Promise<boolean|null>;
+
+    changePrice(id:string, newPrice: number):Promise<boolean|null>;
 }

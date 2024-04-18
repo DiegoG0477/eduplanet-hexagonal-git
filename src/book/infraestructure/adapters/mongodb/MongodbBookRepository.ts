@@ -56,4 +56,14 @@ export class MongodbBookRepository implements BookRepository{
             return null;
         }
     }
+
+    async changePrice(id:string, newPrice: number):Promise<boolean|null>{
+        try{
+            const updatedBooks = await BookMongodbModel.updateOne({_id:id}, {price:newPrice})
+            return !!updatedBooks;
+        }catch(error){
+            console.log(error);
+            return null;
+        }
+    }
 }
