@@ -8,6 +8,6 @@ import {
 const orderRouter = express.Router();
 
 orderRouter.post('/', createOrderController.run.bind(createOrderController));
-orderRouter.patch('/confirm', confirmOrderController.run.bind(confirmOrderController));
+orderRouter.post('/confirm', confirmOrderController.run.bind(confirmOrderController));
 
 export { orderRouter };
