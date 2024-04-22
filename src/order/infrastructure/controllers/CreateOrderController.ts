@@ -13,6 +13,7 @@ export class CreateOrderController {
         const productId = req.body.productId;
 
         try {
+            console.log('userid', userId);
             const order = await this.createOrderUseCase.run(userId, productId);
 
             if (order) {

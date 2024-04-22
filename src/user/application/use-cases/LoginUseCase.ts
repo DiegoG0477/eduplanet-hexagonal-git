@@ -27,6 +27,8 @@ export class LoginUseCase {
             const user = await this.userRepository.getUserByEmail(email);
             const id = user?.id;
 
+            console.log('id', id);
+
             const token = await this.tokenService.generateToken(
                 id as string,
             );

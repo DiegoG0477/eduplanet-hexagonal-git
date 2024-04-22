@@ -20,9 +20,11 @@ export const authMiddleware = (
     }
 
     try {
-        const decode = jwt.verify(token, secretKey);
+        const decode = jwt.verify(token, secretKey) as jwt.JwtPayload;
 
-        (req as any).userId = decode;
+        console.log("decode", decode);
+
+        (req as any).userId = decode.id;
 
         next();
     } catch (error) {

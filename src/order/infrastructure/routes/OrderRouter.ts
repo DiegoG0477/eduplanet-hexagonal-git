@@ -1,4 +1,5 @@
 import express from 'express';
+import { authMiddleware } from '../../../middlewares/authMiddleware';
 
 import {
     createOrderController,
@@ -7,7 +8,7 @@ import {
 
 const orderRouter = express.Router();
 
-orderRouter.post('/', createOrderController.run.bind(createOrderController));
+orderRouter.post('/', authMiddleware, createOrderController.run.bind(createOrderController));
 orderRouter.post('/confirm', confirmOrderController.run.bind(confirmOrderController));
 
 export { orderRouter };
