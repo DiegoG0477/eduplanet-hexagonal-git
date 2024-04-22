@@ -1,4 +1,4 @@
-import { Book } from "./Book";
+import { Book } from "../entities/Book";
 
 export interface BookRepository {
     addBook(book:Book):Promise<Book|null>;

@@ -14,7 +14,8 @@ export class AddBookController {
                 data.author,
                 data.year,
                 data.pages,
-                data.description
+                data.description,
+                data.image
             );
 
             if (book) {

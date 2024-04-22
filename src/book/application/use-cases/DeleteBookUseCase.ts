@@ -1,4 +1,4 @@
-import { BookRepository } from "../../domain/BookRepository";
+import { BookRepository } from "../../domain/repositories/BookRepository";
 
 export class DeleteBookUseCase {
     constructor(readonly bookRepository: BookRepository ){}

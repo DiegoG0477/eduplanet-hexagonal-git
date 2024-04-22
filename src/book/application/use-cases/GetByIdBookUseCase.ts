@@ -1,5 +1,5 @@
-import { Book } from "../../domain/Book";
-import { BookRepository } from "../../domain/BookRepository";
+import { Book } from "../../domain/entities/Book";
+import { BookRepository } from "../../domain/repositories/BookRepository";
 
 export class GetByIdBookUseCase {
     constructor(readonly bookRepository: BookRepository ){}

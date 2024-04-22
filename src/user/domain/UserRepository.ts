@@ -5,4 +5,5 @@ export interface UserRepository {
     getUsers():Promise<User[]|null>;
     getPassword(email:string):Promise<string|null>;
     changePassword(id:string, password:string):Promise<boolean|null>;
+    getUserByEmail(email:string):Promise<User|null>;
 }

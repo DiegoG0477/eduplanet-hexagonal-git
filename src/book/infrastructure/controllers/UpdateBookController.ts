@@ -9,14 +9,14 @@ export class UpdateBookController{
 
         try{
             const result = await this.updateBookUseCase.run(
-                data.id,
                 data.title,
                 data.price,
                 data.editorial,
                 data.author,
                 data.year,
                 data.pages,
-                data.description
+                data.description,
+                data.image
             );
 
             if (result) {

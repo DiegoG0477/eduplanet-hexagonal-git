@@ -1,28 +1,29 @@
-import { Book } from "../../domain/Book";
-import { BookRepository } from "../../domain/BookRepository";
+import { Book } from "../../domain/entities/Book";
+import { BookRepository } from "../../domain/repositories/BookRepository";
 
 export class UpdateBookUseCase {
     constructor(readonly bookRepository: BookRepository) {}
 
     async run(
-        id: string,
         title: string,
         price: number,
         editorial: string,
         author: string,
         year: number,
         pages: number,
-        description: string
+        description: string,
+        image: string
     ): Promise<boolean | null> {
         const bookObject = new Book(
-            id,
+            '',
             title,
             author,
             editorial,
             year,
             pages,
             price,
-            description
+            description,
+            image
         );
 
         try {

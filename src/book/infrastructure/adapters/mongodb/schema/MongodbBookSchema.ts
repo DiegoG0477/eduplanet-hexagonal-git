@@ -1,4 +1,4 @@
-import { Book } from '../../../domain/Book';
+import { Book } from '../../../../domain/entities/Book';
 import mongoose, { Schema, Document } from 'mongoose';
 
 type IBook = Book & Document;
@@ -11,6 +11,7 @@ const BookSchema: Schema = new Schema({
     year: { type: Number, required: true },
     pages: { type: Number, required: true },
     description: { type: String, required: true },
+    image: { type:String, required: false }
 });
 
 BookSchema.virtual('id').get(function (this: IBook) {

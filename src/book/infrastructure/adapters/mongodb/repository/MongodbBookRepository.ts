@@ -1,6 +1,6 @@
-import { BookMongodbModel } from "./MongodbBookSchema";
-import { BookRepository } from "../../../domain/BookRepository";
-import { Book } from "../../../domain/Book";
+import { BookMongodbModel } from "../schema/MongodbBookSchema";
+import { BookRepository } from "../../../../domain/repositories/BookRepository";
+import { Book } from "../../../../domain/entities/Book";
 
 export class MongodbBookRepository implements BookRepository{
     async addBook(book:Book):Promise<Book|null>{

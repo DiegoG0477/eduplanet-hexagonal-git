@@ -1,4 +1,3 @@
-import { AuthCredentials } from "../../domain/entities/AuthCredentials";
 import { UserRepository } from "../../domain/UserRepository";
 import { IEncryptPasswordService } from "../../domain/services/IEncryptPasswordService";
 import { ITokenService } from "../services/ITokenService";
@@ -25,10 +24,11 @@ export class LoginUseCase {
                 return null;
             }
 
-            const authCredentials = new AuthCredentials(email, password);
+            const user = await this.userRepository.getUserByEmail(email);
+            const id = user?.id;
 
             const token = await this.tokenService.generateToken(
-                authCredentials
+                id as string,
             );
 
             return token;

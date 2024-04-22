@@ -1,5 +1,5 @@
-import { Book } from "../../domain/Book";
-import { BookRepository } from "../../domain/BookRepository";
+import { Book } from "../../domain/entities/Book";
+import { BookRepository } from "../../domain/repositories/BookRepository";
 
 export class AddBookUseCase {
     constructor(readonly bookRepository: BookRepository ){}
@@ -11,7 +11,8 @@ export class AddBookUseCase {
         author:string,
         year:number,
         pages:number,
-        description:string
+        description:string,
+        image:string
     ): Promise<Book|null>{
         const bookObject = new Book(
             "",
@@ -21,7 +22,8 @@ export class AddBookUseCase {
             year,
             pages,
             price,
-            description
+            description,
+            image
         );
 
         try{

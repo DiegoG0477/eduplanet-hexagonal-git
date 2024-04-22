@@ -7,6 +7,7 @@ export class Book {
         readonly year: number,
         readonly pages: number,
         readonly price: number,
-        readonly description: string
+        readonly description: string,
+        readonly image: string,
     ) { }
 }

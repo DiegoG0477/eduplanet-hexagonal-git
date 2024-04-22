@@ -1,4 +1,4 @@
-import { BookRepository } from "../../domain/BookRepository";
+import { BookRepository } from "../../domain/repositories/BookRepository";
 import { IPriceOperationsService } from "../services/IPriceOperationsService";
 
 export class CreateOfferUseCase{

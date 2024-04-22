@@ -25,4 +25,9 @@ export class MongodbUserRepository implements UserRepository{
         if(!user) return false;
         return true;
     }
+
+    async getUserByEmail(email: string): Promise<User | null> {
+        const user = await UserMongodbModel.findOne({email: email});
+        return user;
+    }
 }
