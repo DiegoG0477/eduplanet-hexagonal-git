@@ -5,8 +5,8 @@ import { OrderMongodbModel } from "./MongodbOrderSchema";
 export class MongodbOrderRepository implements OrderRepository {
     async save(order: Order): Promise<Order | null> {
         const orderMongodbModel = new OrderMongodbModel(order);
-        await orderMongodbModel.save();
-        return order;
+        const createdOrder = await orderMongodbModel.save();
+        return createdOrder;
     }
 
     async updateStatus(id: string, status: string): Promise<boolean> {
