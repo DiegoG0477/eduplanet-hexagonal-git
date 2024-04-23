@@ -5,4 +5,5 @@ export interface OrderRepository {
     findByUserId(userId: string): Promise<Order[] | null>;
     findByProductId(productId: string): Promise<Order[] | null>;
     updateStatus(id: string, status: string): Promise<boolean>;
+    getAll(): Promise<Order[] | null>;
 }

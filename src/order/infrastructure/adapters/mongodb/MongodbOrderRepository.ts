@@ -26,4 +26,9 @@ export class MongodbOrderRepository implements OrderRepository {
         const orders = await OrderMongodbModel.find({ idProduct: productId });
         return orders;
     }
+
+    async getAll(): Promise<Order[] | null> {
+        const orders = await OrderMongodbModel.find();
+        return orders;
+    }
 }
