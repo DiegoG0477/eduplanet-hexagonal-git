@@ -9,9 +9,9 @@ export class ConfirmOrderController {
     ){}
 
     async run(req: Request, res: Response) {
-        const orderId = req.body.id;
-        const userId = req.body.idUser;
-        const productId = req.body.idProduct;
+        const orderId = req.body.orderId;
+        const userId = req.body.userId;
+        const productId = req.body.productId;
         const status = req.body.status;
 
         try {
